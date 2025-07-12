@@ -32,7 +32,7 @@ model Image {
     contentType String?
     size        Int?
     createdAt   DateTime @default(now())
-    updatedAt   DateTime @updatedAt
+    updatedAt   DateTime @updatedAt // TODO: drop
 
     // === FOREIGN KEYS ===
     userId String
@@ -40,7 +40,7 @@ model Image {
     // === RELATIONS ===
     user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
-    @@index([updatedAt])
+    @@index([updatedAt]) // TODO: add the creation time here 
     @@index([size])
     @@index([userId])
 }

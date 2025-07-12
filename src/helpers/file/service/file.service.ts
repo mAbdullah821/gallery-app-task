@@ -36,6 +36,7 @@ export class FileService {
    * const uploaded = await fileService.uploadFile(file, 'temp');
    * console.log(uploaded.path); // e.g., "temp/invoice_1716912641000.xlsx"
    * ```
+   *
    */
   public async uploadFile(file: Express.Multer.File, prefix: string = 'default'): Promise<UploadedGSObject> {
     try {

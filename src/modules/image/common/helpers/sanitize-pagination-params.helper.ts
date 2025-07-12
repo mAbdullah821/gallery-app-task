@@ -5,7 +5,7 @@ export const DEFAULT_PAGE_SIZE = 20;
 export const MIN_PAGE_SIZE = 1;
 export const MAX_PAGE_SIZE = 100;
 
-function sanitizePaginationParams(pageNumber = DEFAULT_PAGE_NUMBER, pageSize = DEFAULT_PAGE_SIZE) {
+export function sanitizePaginationParams(pageNumber = DEFAULT_PAGE_NUMBER, pageSize = DEFAULT_PAGE_SIZE) {
   // Normalize page number: ensure it's a number, floored, and not less than minimum
   const sanitizedPageNumber = Number.isFinite(pageNumber)
     ? Math.max(MIN_PAGE_NUMBER, Math.floor(pageNumber))

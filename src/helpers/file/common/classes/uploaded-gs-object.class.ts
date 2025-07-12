@@ -3,13 +3,13 @@ export class UploadedGSObject {
   contentType: string;
   size: number;
   publicURL: string;
-  uploadedAt: string;
+  createdAt: string;
 
   constructor(bucketName: string, destinationPath: string, file: Express.Multer.File) {
     this.fileName = file.originalname;
     this.contentType = file.mimetype;
     this.size = file.size;
     this.publicURL = `https://storage.googleapis.com/${bucketName}/${destinationPath}`;
-    this.uploadedAt = new Date().toISOString();
+    this.createdAt = new Date().toISOString();
   }
 }

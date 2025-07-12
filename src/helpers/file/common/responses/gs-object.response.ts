@@ -1,6 +1,9 @@
 import { ApiProperty } from '@nestjs/swagger';
 
 export class GSObjectResponse {
+  @ApiProperty({ example: 'file id', description: 'id of the file' })
+  id: string;
+
   @ApiProperty({ example: 'document.pdf', description: 'Name of the uploaded file' })
   fileName: string;
 
@@ -17,5 +20,8 @@ export class GSObjectResponse {
   publicURL: string;
 
   @ApiProperty({ example: '2024-08-17T12:34:56.000Z', description: 'Upload date and time in ISO format' })
-  uploadedAt: string;
+  createdAt: string;
+
+  @ApiProperty({ example: '2024-08-17T12:34:56.000Z', description: 'Upload date and time in ISO format' })
+  updatedAt: string;
 }
